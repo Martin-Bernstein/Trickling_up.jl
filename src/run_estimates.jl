@@ -87,7 +87,7 @@ Tight Monetary Policy (\$\\Phi = $(ϕ)\$)
 """
 
 # Write the output to a .tex file
-open("table1.tex", "w") do f
+open("output/table1.tex", "w") do f
     write(f, latex_output)
 end
 
