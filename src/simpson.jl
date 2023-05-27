@@ -1,3 +1,6 @@
+"""
+Auxiliary function to implement Simpson's rule, in order to integrate over the paths of consumption, to obtain the duration of total consumption \$\\int tC_t / \\int C_t\$.
+"""
 function simpson_weights(T)
     # get equispaced Simpson weights of 1, 4, 2, 4, 2, ..., 4, 1 all divided by 3
     @assert T % 2 == 1 "must have odd # of points, even # of intervals for standard Simpson rule"
@@ -6,7 +9,9 @@ function simpson_weights(T)
     weights[end] -= 1
     return weights ./ 3
 end
-
+"""
+Implements Simpson's rule in order to integrate over the paths, using the auxiliary weights function simpson_weights.
+"""
 function simpson(y, x)
     # Integrate y(x) using Simpson's rule, assuming x is equispaced
     T = length(x)
@@ -20,6 +25,9 @@ function simpson(y, x)
     end
 end
 
+"""
+Calculates the duration of total consumption using the "simpson" integration function.
+"""
 function duration(X)
     return simpson(X .* ts', ts) / simpson(X, ts)
 end

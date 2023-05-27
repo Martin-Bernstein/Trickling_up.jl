@@ -1,5 +1,10 @@
 using Trickling_up
 using Printf
+"""
+This auxiliary function calls the model simulation functions for a variety of specifications and calibrations. The replicator should adjust the calibrations made inside of the function definition if they wish to experiment with different model specifications. The specifications used in the paper are run and are returned.
+    
+(These calibrations are: partial equilibrium; baseline general equilibrium; three alternate general equilibrium calibrations; a rational expectations extension; and a tight monetary policy extension.) 
+"""
 function run_estimates()
     
 #300 quarters

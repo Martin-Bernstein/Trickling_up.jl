@@ -1,5 +1,12 @@
 """
-Simulates a baseline model
+Simulates the baseline model. The model in the paper is designed to study the distribution of wealth between quantile groups over time. The function returns the paths of assets for each group and the path of aggregate consumption, across the simulation.
+
+Arguments:
+a0 is a vector of the groups' excess savings' initial shares in GDP.
+m is a vector of each group's respective marginal propensity to consume.
+theta is a vector with the proportion of national income earned by each group.
+ts is the time-series for which the model is to be simulated.
+ge is a boolean which switches general equilibrium effects on or off, enabling analysis of partial and general equilibrium separately.
 """
 function simulate_baseline(a0, m, theta, ts; ge=true)
     # define matrix B so that adot = Ba, use matrix exponential as solution for each t
@@ -14,7 +21,7 @@ function simulate_baseline(a0, m, theta, ts; ge=true)
 end
 
 """
-Extends the model to include rational expectations of future income
+This function extends the baseline model to include rational expectations of future income. a0, m, theta, and ts are as before. The function returns the path of assets and consumption.
 """
 function simulate_re(a0, m, theta, ts)
     # drop last type (assume Ricardian), remember total assets
@@ -35,7 +42,7 @@ function simulate_re(a0, m, theta, ts)
 end
 
 """
-Extends the model to include a monetary policy response.
+This function extends the model to include a monetary policy response. a0, m, theta, and ts are as in simulate_baseline. phi is the coefficient on output in the monetary authorities policy function: the paper assumes that real rates are set according to \$r_t=\\phi Y_t\$. sigma is households' elasticity of intertemporal substitution.
 """
 function simulate_monetary(a0, sigma, m, theta, phi, ts)
     N = length(m)
