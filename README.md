@@ -5,4 +5,12 @@
 [![Build Status](https://github.com/Martin-Bernstein/Trickling_up.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/Martin-Bernstein/Trickling_up.jl/actions/workflows/CI.yml?query=branch%3Amain)
 
 
-The goal of this replication kit is to reproduce the main results from Auclert et. al., 2023, ``The trickling up of Excess Savings.''
+The goal of this replication kit is to reproduce the main results from Auclert et. al., 2023, "The trickling up of Excess Savings."
+Here's a test of some latex:
+\$x+y\$
+```
+x+y
+```
+```math
+x+y
+```
