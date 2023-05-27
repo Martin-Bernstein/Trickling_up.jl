@@ -20,7 +20,7 @@ jobs:
         version:
           - '1.8'
         os:
-          - ubuntu-latest
+          - mocOS-latest
         arch:
           - x64
           - x86
