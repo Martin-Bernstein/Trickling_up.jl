@@ -20,7 +20,7 @@ jobs:
         version:
           - '1.8'
         os:
-          - mocOS-latest
+          - macOS-latest
         arch:
           - x64
           - x86
