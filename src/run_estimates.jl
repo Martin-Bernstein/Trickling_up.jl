@@ -6,7 +6,7 @@ This auxiliary function calls the model simulation functions for a variety of sp
     
 (These calibrations are: partial equilibrium; baseline general equilibrium; three alternate general equilibrium calibrations; a rational expectations extension; and a tight monetary policy extension.) 
 """
-function run_estimates()
+function run_estimates(;print)
     
 #300 quarters
 ts = range(0, stop=300, length=500)
@@ -44,6 +44,7 @@ a_mp, C_mp = Trickling_up.simulate_monetary(a₀, 1/0.5, m, θ, ϕ, ts)
 
 #300 quarters
 ts = range(0, stop=300, length=500)
+if(print)
 #Print results to screen
 println(@sprintf(" PE C           = %d Q  | a0 = %d Q  | a1 = %d Q", Trickling_up.duration(C_pe), Trickling_up.duration(a_pe[1,:]'), Trickling_up.duration(a_pe[2,:]')))
 println(@sprintf(" Benchmark C    = %d Q | a0 = %d Q | a1 = %d Q ", Trickling_up.duration(C), Trickling_up.duration(a[1,:]'), Trickling_up.duration(a[2,:]')))
@@ -102,7 +103,7 @@ run(`latexmk -pdf -outdir=output output/table1.tex`)
 # Clean up auxiliary files
 run(`latexmk -c -outdir=output output/table1.tex`)
 
-
+end
 
 
 return a_pe, C_pe, a, C, a1, C1, a2, C2, a3, C3, a_re, C_re, a_mp, C_mp, ts
