@@ -98,7 +98,11 @@ open("output/table1.tex", "w") do f
 end
 
 # Generate a .pdf from the file.
-@async run(`latexmk -pdf -c -outdir=output output/table1.tex`)
+run(`latexmk -pdf -outdir=output output/table1.tex`)
+# Clean up auxiliary files
+run(`latexmk -c -outdir=output output/table1.tex`)
+
+
 
 
 return a_pe, C_pe, a, C, a1, C1, a2, C2, a3, C3, a_re, C_re, a_mp, C_mp, ts
