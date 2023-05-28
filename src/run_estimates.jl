@@ -1,5 +1,6 @@
 using Trickling_up
 using Printf
+using LaTeXStrings
 """
 This auxiliary function calls the model simulation functions for a variety of specifications and calibrations. The replicator should adjust the calibrations made inside of the function definition if they wish to experiment with different model specifications. The specifications used in the paper are run and are returned.
     
@@ -64,7 +65,7 @@ latex_output = """
 \\begin{document}
 \\begin{tabular}{llll}
 \\hline
-& \\multicolumn{3}{c}{Trickling_up.duration of output and excess savings} \\\\
+& \\multicolumn{3}{c}{Duration of output and excess savings} \\\\
 \\hline
 Scenario & Output \$Y\$ & Middle class \$a_1\$ & Rich \$a_2\$ \\\\
 \\hline\\hline
@@ -95,6 +96,10 @@ Tight Monetary Policy (\$\\Phi = $(ϕ)\$)
 open("output/table1.tex", "w") do f
     write(f, latex_output)
 end
+
+# Generate a .pdf from the file.
+@async run(`latexmk -pdf -c -outdir=output output/table1.tex`)
+
 
 return a_pe, C_pe, a, C, a1, C1, a2, C2, a3, C3, a_re, C_re, a_mp, C_mp, ts
 end

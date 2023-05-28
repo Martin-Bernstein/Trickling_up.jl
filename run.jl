@@ -1,5 +1,7 @@
 using Trickling_up
 using Plots
+using LaTeXStrings
+using TestSetExtensions
 
 include("src/run_estimates.jl")
 

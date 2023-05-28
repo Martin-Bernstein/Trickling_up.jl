@@ -2,7 +2,8 @@ module Trickling_up
     using DifferentialEquations
     using LinearAlgebra
     using Plots
-    
+    using LaTeXStrings
+    using TestSetExtensions
     #300 quarters
     ts = range(0, stop=300, length=500)
     
