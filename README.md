@@ -8,7 +8,9 @@ The goal of this replication kit is to reproduce the main results from Auclert e
 
 The original scripts that I translate into Julia are `auclertoriginal/replication/Figure1.py`, `auclertoriginal/ct_re_solver.py`, and `auclertoriginal/trickling up model.py`.
 
-There are two ways to run my replication: from this repository, using software installed on your machine; or via a Docker container. (If you are unfamiliar with Docker, replicating via the Docker container allows you to run the project on a virtual machine configured with all of the necessary software.)
+The mathematical background of the model simulation functions are described in my [package documentation](https://martin-bernstein.github.io/Trickling_up.jl/dev/).
+
+**There are two ways to run my replication**: from this repository, using software installed on your machine; or via a Docker container. (If you are unfamiliar with Docker, replicating via the Docker container allows you to run the project on a virtual machine configured with all of the necessary software.)
 
 This readme will explain steps first for replication using this repository, and second using the docker container.
 
