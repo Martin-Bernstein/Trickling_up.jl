@@ -4,12 +4,14 @@ using TestSetExtensions
 
 @testset "Trickling_up.jl" begin
 #Test that the length of the returned paths match the original time series
+include("../src/run_estimates.jl")
 a_pe, C_pe, a, C,
 a1, C1, a2, C2, 
 a3, C3, a_re, C_re,
 a_mp, C_mp, ts = run_estimates(print=false)
 as = [a_pe, a, a1, a2, a3, a_re, a_mp]
 Cs = [C_pe, C, C1, C2, C3, C_re, C_mp]
+
 #=
 for a in as
     for i in axes(a,1)
@@ -22,6 +24,6 @@ for C in Cs
     end
 end
 =#
-@test length(a_pe[i,:]) == length(ts)
-@test length(C_pe[i,:]) == length(ts)
+@test length(a_pe[1,:]) == length(ts)
+@test length(C_pe[1,:]) == length(ts)
 end
