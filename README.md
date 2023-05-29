@@ -4,7 +4,9 @@
 [![Build Status](https://github.com/Martin-Bernstein/Trickling_up.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/Martin-Bernstein/Trickling_up.jl/actions/workflows/CI.yml?query=branch%3Amain)
 
 
-The goal of this replication kit is to reproduce the main results from Auclert et. al., 2023, "The trickling up of Excess Savings." There are two ways to run this replication: from this repository, using software installed on your machine; or via a Docker container. (If you are unfamiliar with Docker, replicating via the Docker container allows you to run the project on a virtual machine configured with all of the necessary software for replication.)
+The goal of this replication kit is to reproduce the main results from Auclert et. al., 2023, "The trickling up of Excess Savings." The original replication kit is in the directory `auclert_original`. I replicate Figures 1 and 4 (figures 2 and 3 are author illustrations) and Table 1 from the manuscript (`auclert_original/tricklingup.pdf`). The original scripts that I translate into Julia are `auclert_original/replication/Figure1.py`, `auclert_original/ct_re_solver.py`, and `auclert_original/trickling up model.py`.
+
+There are two ways to run my replication: from this repository, using software installed on your machine; or via a Docker container. (If you are unfamiliar with Docker, replicating via the Docker container allows you to run the project on a virtual machine configured with all of the necessary software.)
 
 This readme will explain steps first for replication using this repository, and second using the docker container.
 
@@ -25,6 +27,6 @@ using Pkg
 Pkg.activate(".")   #Activate the package
 include("run.jl")   #Commands in the run.jl file will execute replication
 ```
-3. The above will output the table and figures to `/path/to/pkg/output`. You can check that the files `figure4.pdf`, `table1.tex`, and `table1.pdf` have been newly written into the `output` folder, and that they correspond to the figures in the original paper (the manuscript is at `Auclert_original.pdf`)
+3. The above will output the table and figures to `/path/to/pkg/output`. You can check that the files `figure1.pdf`,`figure4.pdf`, `table1.tex`, and `table1.pdf` have been newly written into the `output` folder, and that they correspond to the figures in the original paper (the manuscript is at `auclert_original/tricklingup.pdf`).
 
 # Replicating with the docker container
