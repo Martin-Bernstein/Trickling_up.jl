@@ -42,7 +42,7 @@ function simulate_re(a0, m, theta, ts)
 end
 
 """
-This function extends the model to include a monetary policy response. a0, m, theta, and ts are as in simulate_baseline. phi is the coefficient on output in the monetary authorities policy function: the paper assumes that real rates are set according to \$r_t=\\phi Y_t\$. sigma is households' elasticity of intertemporal substitution.
+This function extends the model to include a monetary policy response. a0, m, theta, and ts are as in `simulate_baseline`. phi is the coefficient on output in the monetary authorities policy function: the paper assumes that real rates are set according to \$r_t=\\phi Y_t\$. sigma is households' elasticity of intertemporal substitution.
 """
 function simulate_monetary(a0, sigma, m, theta, phi, ts)
     N = length(m)
