@@ -25,4 +25,7 @@ using Pkg
 Pkg.activate(".")   #Activate the package
 include("run.jl")   #Commands in the run.jl file will execute replication
 ```
-3. The above will output the table and figures to `/path/to/pkg/output`. You can check that the files `figure4.pdf`, `table1.tex`, and `table1.pdf` have been newly written into the `output` folder, and that they correspond to the figures in the original paper (the manuscript is at `Auclert_original.pdf]`)
+3. The above will output the table and figures to `/path/to/pkg/output`. You can check that the files `figure4.pdf`, `table1.tex`, and `table1.pdf` have been newly written into the `output` folder, and that they correspond to the figures in the original paper (the manuscript is at `Auclert_original.pdf`)
+
+# Replicating with the docker container
+
