@@ -30,3 +30,22 @@ include("run.jl")   #Commands in the run.jl file will execute replication
 3. The above will output the table and figures to `/path/to/pkg/output`. You can check that the files `figure1.pdf`,`figure4.pdf`, `table1.tex`, and `table1.pdf` have been newly written into the `output` folder, and that they correspond to the figures in the original paper (the manuscript is at `auclert_original/tricklingup.pdf`).
 
 # Replicating with the docker container
+
+## Software requirements
+1. `Docker` in order to access and run the container. You can download the latest version of Docker desktop [here](https://www.docker.com/products/docker-desktop/).
+
+## Replication using the command line
+
+1. "Pull" the Docker container from DockerHub:
+    ```
+    docker pull martinbernstein/trickling-up-docker:latest
+    ```
+2. Run the Docker container. The Docker container will write tables and figures to an output folder. You can specify where on your machine you would like this output folder to live, by replacing `/path/to/desired/output` with your desired file path. The rest of the code should be typed in as is below.
+    ```
+    docker run -it --rm -v /path/to/desired/outputfolder:/app/output martinbernstein/trickling-up-docker
+    ```
+3. Check that the figures and tables in your `/path/to/desired/outputfolder` are as in the original manuscript.
+
+The one downside to this replication technique is that the container is entirely opaque: you cannot see what I am doing to replicate the paper. You can look inside the contained by instead using Docker desktop.
+## Replication using Docker desktop
+1. Open Docker desktop. Search 
