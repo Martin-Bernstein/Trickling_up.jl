@@ -12,6 +12,4 @@ module Trickling_up
     include("model_simulators.jl")
     include("simpson.jl")
 
-    include("../test/runtests.jl")
-
 end
