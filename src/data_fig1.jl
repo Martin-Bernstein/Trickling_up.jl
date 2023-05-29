@@ -9,7 +9,7 @@ using Plots
 function data_fig1()
     
     #Import savings rate from FRED, calculate mean
-    df = DataFrame(XLSX.readtable("./auclert_original/replication/Data/PSAVERT.xlsx","FRED Graph"))
+    df = DataFrame(XLSX.readtable("./auclertoriginal/replication/Data/PSAVERT.xlsx","FRED Graph"))
     rename!(df,["date","savings_rate"])
     df[:,1] = Date.(df[:,1])
     df = df[df[:,1] .> Date("2014"),:] #Keep observations after 2014
@@ -17,7 +17,7 @@ function data_fig1()
     avg = mean(df[df[:,1] .< Date("2019-01-01"),2])
 
     #Import excess savings stock from Fed Board
-    df2 = DataFrame(XLSX.readtable("./auclert_original/replication/Data/Excess_Savings.xlsx","Data"))
+    df2 = DataFrame(XLSX.readtable("./auclertoriginal/replication/Data/Excess_Savings.xlsx","Data"))
     df2[!,"date"] = Date.(df2[!,"date"])
 
     #Plot figure
