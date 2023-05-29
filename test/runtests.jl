@@ -1,9 +1,7 @@
 using Trickling_up
 using Test
 using TestSetExtensions
-"""
-Tests that the model simulations run and that the simulated output paths match the length of the time series used.
-"""
+
 @testset "Trickling_up.jl" begin
 #Test that the length of the returned paths match the original time series
 a_pe, C_pe, a, C,
