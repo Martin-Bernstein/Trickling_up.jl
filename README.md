@@ -47,5 +47,10 @@ include("run.jl")   #Commands in the run.jl file will execute replication
 3. Check that the figures and tables in your `/path/to/desired/outputfolder` are as in the original manuscript.
 
 The one downside to this replication technique is that the container is entirely opaque: you cannot see what I am doing to replicate the paper. You can look inside the contained by instead using Docker desktop.
+
 ## Replication using Docker desktop
-1. Open Docker desktop. Search 
+1. Open Docker desktop. Search for trickling-up-docker in the search bar at the top (which you can also open with command-K). Search in the "images" tab.
+2. Select the `martinbernstein/trickling-up-docker` image. Click `Run`. Under optional settings, you can optionally name the container and assign a local host; click `Run` again when done.
+3. The container will begin to run. The `Logs` tab will open by default. It may show errors; this does not mean that the container is not running successfully. Navigate instead to the `Files` tab.
+4. Open the `app` directory in the `Files` tab. Here, you can view the code contained in the Docker container (and verify that it is the same as the code in this repository).
+5. The replicated tables and figures will be in the `/app/output` directory. You can verify that the "Last modified" will be the time at which you ran the container. To view these files, control-click on them and select `save`. You can then save the replication output and verify that it matches the manuscript.
