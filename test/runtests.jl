@@ -1,6 +1,8 @@
 using Trickling_up
 using Test
 using TestSetExtensions
+using Printf
+using LaTeXStrings
 
 @testset "Trickling_up.jl" begin
 #Test that the length of the returned paths match the original time series
