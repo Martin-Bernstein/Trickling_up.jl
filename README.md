@@ -80,7 +80,7 @@ The downside to this replication technique is that the container is entirely opa
 2. Select the `martinbernstein/trickling-up-docker` image. Click `Run`. Under optional settings, you can optionally name the container and assign a local host; click `Run` again when done.
 3. The container will begin to run. The `Logs` tab will open by default. It may show errors; this does not mean that the container is not running successfully. Navigate instead to the `Files` tab.
 4. Open the `app` directory in the `Files` tab. Here, you can view the code contained in the Docker container (i.e., the `.jl` files in this directory). You can verify that they are the same as the code in this repository.
-5. Once the container has run, replicated tables and figures will be in the `/app/output` directory. You can verify that the "Last modified" will be the time at which you ran the container. To view these files, control-click on them and select `save`. You can then save the replication output and verify that it matches the [manuscript])auclertoriginal/tricklingup.pdf).
+5. Once the container has run, replicated tables and figures will be in the `/app/output` directory. You can verify that the "Last modified" will be the time at which you ran the container. To view these files, control-click on them and select `save`. You can then save the replication output and verify that it matches the [manuscript](auclertoriginal/tricklingup.pdf).
 
 # Replication output and explanation
 The replication instructions above describe how to view replication output. Here I'll include the output of the latest replication run in this repo for convenience.
