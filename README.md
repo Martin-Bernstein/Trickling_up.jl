@@ -5,7 +5,7 @@
 
 
 This is a replication kit for the paper
-- Auclert, Adrien, Matthew Rognolie, and Ludwig Straub. 2023, "The trickling up of Excess Savings." AEA Papers and Proceedings, 2023.
+- Auclert, Adrien, Matthew Rognolie, and Ludwig Straub. "The trickling up of Excess Savings." AEA Papers and Proceedings, 2023.
 
 The paper provides a model that helps understand observed patterns in US savings behavior since the Covid pandemic: because of the US' regressive tax system, stimulus payments made to poorer Americans eventually "trickle up" to the rich. The model studies factors that affect this trickling up.
 
