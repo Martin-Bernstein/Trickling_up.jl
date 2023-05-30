@@ -63,7 +63,7 @@ The docker image for this project is available on DockerHub and is called martin
     ```
     docker pull martinbernstein/trickling-up-docker:latest
     ```
-2. Run the Docker container by typing the code below into terminal. The Docker container will write tables and figures to an output folder. You can specify where on your machine you would like this output folder to live, by replacing `/desired/output` with your desired file path. The rest of the code should be typed in as is:
+2. Run the Docker container by typing the code below into terminal. The Docker container will write tables and figures to an output folder. You can specify where on your machine you would like this output folder to live, by replacing `/desired/outputfolder` with your desired file path. The rest of the code should be typed in as is:
 
     ```
     docker run -it --rm -v /desired/outputfolder:/app/output martinbernstein/trickling-up-docker
