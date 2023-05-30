@@ -52,7 +52,7 @@ You can check that the files `figure1.pdf`,`figure4.pdf`, `table1.tex`, and `tab
 You can check that they correspond to the figures in the original paper [here](auclertoriginal/tricklingup.pdf).
 
 # Replicating with the docker container
-The docker image for this project is available on DockerHub and is called martinbernstein/trickling-up-docker. The steps below describe how to run a contained from this project and view its output. (If you are familiar with Docker, the [`Dockerfile`](Dockerfile) in this repository was used to construct the Docker image.)
+The docker image for this project is available on DockerHub and is called martinbernstein/trickling-up-docker. The steps below describe how to run a container from this project and view its output. (If you are familiar with Docker, the [`Dockerfile`](Dockerfile) in this repository was used to construct the Docker image.)
 
 ## Software requirements
 1. `Docker` in order to access and run the container. Download the latest version of Docker desktop [here](https://www.docker.com/products/docker-desktop/).
@@ -63,7 +63,7 @@ The docker image for this project is available on DockerHub and is called martin
     ```
     docker pull martinbernstein/trickling-up-docker:latest
     ```
-2. Run the Docker container by typing the code below into terminal. The Docker container will write tables and figures to an output folder. You can specify where on your machine you would like this output folder to live, by replacing `/desired/outputfolder` with your desired file path. The rest of the code should be typed in as is:
+2. Run the Docker container by typing the code below into terminal. The Docker container will write tables and figures to an output folder. You can specify where on your machine you would like this output folder to live, by replacing `/desired/outputfolder` with your desired file path. The rest of the code should be typed in as is (keep the `:`).
 
     ```
     docker run -it --rm -v /desired/outputfolder:/app/output martinbernstein/trickling-up-docker
@@ -90,6 +90,8 @@ This figure shows savings dynamics during the Covid pandemic. The left panel ind
 ![Figure 1](output/Figure1.png)
 
 ### Figure 4
+![Figure 4](output/Figure4.png)
+
 This figure is the main result of the paper. The paper writes a continuous time heterogeneous agent model with \$N\$ types of households, indexed by \$i\$. These are thought of as houses with different levels of wealth. Motivated by empirical results, the authors assume that less wealthy households have higher marginal propensities to consume. Agents own assets on which they receive interest. The authors start from a version of the model linearized around the steady state:
 ```math 
 c_{it}=m_ia_{it} \hspace{1cm}\dot{a}_{it}=\theta_tY_t-c_{it}\hspace{1cm}
@@ -102,8 +104,6 @@ The partial and general equilibrium results of this simulation are the top two p
 The authors then extend the model to include rational expectations and monetary policy. The resulting simulation is the bottom left panel of figure 4. Tight monetary policy speeds up the trickling up process.
 
 Finally, the bottom right panel plots the paths of consumption under each of the three models.
-
-![Figure 4](output/Figure4.png)
 
 ### Table 1
 [Table 1](output/table1.pdf) displays the duration of output and excess savings. The "duration" of a variable \$X_t\$ is defined as \$\\int tX_tdt / \\int X_tdt\$. It quantifies the differences between the models shown in figure 4, as well as in several alternative model calibrations.
