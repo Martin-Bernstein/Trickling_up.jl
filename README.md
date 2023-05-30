@@ -82,7 +82,7 @@ The replication instructions above describe how to view replication output. Here
 
 ### Figure 1
 This figure shows savings dynamics during the Covid pandemic. The left panel indicates that due to shutdowns and stimulus payments, savings initially spiked as consumption dropped. Then households "spent down" their excess savings afterwards. The right panel shows the aggregate effect of this behavior on the stock of excess savings.
-![Figure 1](output/Figure1.pdf)
+![Figure 1](output/Figure1.png)
 
 ### Figure 4
 This figure is the main result of the paper. The paper writes a continuous time heterogeneous agent model with \$N\$ types of households, indexed by \$i\$. These are thought of as houses with different levels of wealth. Motivated by empirical results, the authors assume that less wealthy households have higher marginal propensities to consume. Agents own assets on which they receive interest. The authors start from a version of the model linearized around the steady state:
@@ -98,9 +98,9 @@ The authors then extend the model to include rational expectations and monetary 
 
 Finally, the bottom right panel plots the paths of consumption under each of the three models.
 
-![Figure 4](output/Figure4.pdf)
+![Figure 4](output/Figure4.png)
 
 ### Table 1
 Table 1 displays the duration of output and excess savings. The "duration" of a variable \$X_t\$ is defined as \$\\int tX_tdt / \\int X_tdt\$.
-![Table 1](output/table1.pdf)
+![Table 1](output/table1.tex)
 
