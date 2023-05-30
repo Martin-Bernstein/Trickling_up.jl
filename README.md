@@ -108,3 +108,7 @@ Finally, the bottom right panel plots the paths of consumption under each of the
 ### Table 1
 [Table 1](output/table1.pdf) displays the duration of output and excess savings. The "duration" of a variable \$X_t\$ is defined as \$\\int tX_tdt / \\int X_tdt\$. It quantifies the differences between the models shown in figure 4, as well as in several alternative model calibrations.
 
+# Package testing
+The green badge at the top of this readme indicates that the package is passing its tests. These tests include compatibility tests, in which the package is compiled on virtual Mac OS intel and Windows machines. This suggests that replication from the repository should be successful on these machines.
+
+In addition, I included my own tests of the code's logic in the [`runtests`](test/runtests.jl) script. This test calls all of the model simulations with a baseline calibration, and ensures that the output of the simulation tests is correctly formatted. (Specifically, it checks that, for each of the number of agents used in the model, the length of the paths of their wealth and consumption matches the length of the time series over which the model was simulated).
