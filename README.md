@@ -12,7 +12,7 @@ The paper provides a model that helps understand observed patterns in US savings
 The original replication kit is included in [auclertoriginal](auclertoriginal).
 I replicate Figures 1 and 4 (figures 2 and 3 are author illustrations) and Table 1 from the manuscript [here](auclertoriginal/tricklingup.pdf). 
 
-The original scripts that I translate into Julia are [this](auclertoriginal/replication/Figure1.py), [this](auclertoriginal/ct_re_solver.py), and [this](auclertoriginal/trickling up model.py).
+The original scripts that I translate into Julia are [this](auclertoriginal/replication/Figure1.py), [this](auclertoriginal/ct_re_solver.py), and [this](auclertoriginal/trickling_up_model.py).
 
 The mathematical background of the model simulation functions are described in my [package documentation](https://martin-bernstein.github.io/Trickling_up.jl/dev/).
 
