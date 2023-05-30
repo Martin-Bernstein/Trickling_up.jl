@@ -106,6 +106,5 @@ Finally, the bottom right panel plots the paths of consumption under each of the
 ![Figure 4](output/Figure4.png)
 
 ### Table 1
-Table 1 displays the duration of output and excess savings. The "duration" of a variable \$X_t\$ is defined as \$\\int tX_tdt / \\int X_tdt\$.
-![Table 1](output/table1.tex)
+[Table 1](output/table1.pdf) displays the duration of output and excess savings. The "duration" of a variable \$X_t\$ is defined as \$\\int tX_tdt / \\int X_tdt\$. It quantifies the differences between the models shown in figure 4, as well as in several alternative model calibrations.
 
