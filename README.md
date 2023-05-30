@@ -9,9 +9,10 @@ This is a replication kit for the paper
 
 The paper provides a model that helps understand observed patterns in US savings behavior since the Covid pandemic: because of the US' regressive tax system, stimulus payments made to poorer Americans eventually "trickle up" to the rich. The model studies factors that affect this trickling up.
 
-The original replication kit is included in `auclertoriginal`. I replicate Figures 1 and 4 (figures 2 and 3 are author illustrations) and Table 1 from the manuscript (`auclertoriginal/tricklingup.pdf`). 
+The original replication kit is included in [auclertoriginal](auclertoriginal).
+I replicate Figures 1 and 4 (figures 2 and 3 are author illustrations) and Table 1 from the manuscript [here](auclertoriginal/tricklingup.pdf). 
 
-The original scripts that I translate into Julia are `auclertoriginal/replication/Figure1.py`, `auclertoriginal/ct_re_solver.py`, and `auclertoriginal/trickling up model.py`.
+The original scripts that I translate into Julia are [this](auclertoriginal/replication/Figure1.py), [this](auclertoriginal/ct_re_solver.py), and [this](auclertoriginal/trickling up model.py).
 
 The mathematical background of the model simulation functions are described in my [package documentation](https://martin-bernstein.github.io/Trickling_up.jl/dev/).
 
@@ -34,7 +35,8 @@ Type and run the following in your terminal.
 cd "/path/to/pkg"           #Folder where you will save the file
 git clone "https://github.com/Martin-Bernstein/Trickling_up.jl"
 ```
-Non-git users, download and save this repository into your `path/to/pkg`.
+Non-git users, download and save this repository into your desired folder (I'll call it `path/to/pkg`).
+
 2. Type and run the following in terminal:
 ```
 julia                       #Start the Julia REPL
@@ -44,13 +46,16 @@ julia> Pkg.activate(".")    #Activate the package
 julia> Pkg.instantiate()    #Install necessary files
 julia> include("run.jl")    #Execute replication
 ```
-3. The above will output the table and figures to `/path/to/pkg/output`. You can check that the files `figure1.pdf`,`figure4.pdf`, `table1.tex`, and `table1.pdf` have been newly written into the `output` folder, and that they correspond to the figures in the original paper (the manuscript is at `auclertoriginal/tricklingup.pdf`).
+
+3. The above will output the table and figures to `/path/to/pkg/output`.
+You can check that the files `figure1.pdf`,`figure4.pdf`, `table1.tex`, and `table1.pdf` have been newly written into the `output` folder.
+You can check that they correspond to the figures in the original paper [here](auclertoriginal/tricklingup.pdf).
 
 # Replicating with the docker container
-The docker image for this project is available on DockerHub and is called martinbernstein/trickling-up-docker. The steps below describe how to run a contained from this project and view its output. (If you are familiar with Docker, the `Dockerfile` in this repository was used to construct the Docker image.)
+The docker image for this project is available on DockerHub and is called martinbernstein/trickling-up-docker. The steps below describe how to run a contained from this project and view its output. (If you are familiar with Docker, the [`Dockerfile`](Dockerfile) in this repository was used to construct the Docker image.)
 
 ## Software requirements
-1. `Docker` in order to access and run the container. You can download the latest version of Docker desktop [here](https://www.docker.com/products/docker-desktop/).
+1. `Docker` in order to access and run the container. Download the latest version of Docker desktop [here](https://www.docker.com/products/docker-desktop/).
 
 ## Replication using the command line
 
@@ -58,24 +63,24 @@ The docker image for this project is available on DockerHub and is called martin
     ```
     docker pull martinbernstein/trickling-up-docker:latest
     ```
-2. Run the Docker container by typing the code below into terminal. The Docker container will write tables and figures to an output folder. You can specify where on your machine you would like this output folder to live, by replacing `/path/to/desired/output` with your desired file path. The rest of the code should be typed in as is:
+2. Run the Docker container by typing the code below into terminal. The Docker container will write tables and figures to an output folder. You can specify where on your machine you would like this output folder to live, by replacing `/desired/output` with your desired file path. The rest of the code should be typed in as is:
 
     ```
-    docker run -it --rm -v /path/to/desired/outputfolder:/app/output martinbernstein/trickling-up-docker
+    docker run -it --rm -v /desired/outputfolder:/app/output martinbernstein/trickling-up-docker
     ```
 
 Errors may appear in your console; these are because the compilation of the .tex tables is leading the Docker container to attempt to open the pdfs, which it cannot do. Ignore these errors, they do not affect replication.
 
-3. Check that the figures and tables in your `/path/to/desired/outputfolder` are as in the original manuscript.
+3. Check that the figures and tables in your `/desired/outputfolder` are as in the [original manuscript](auclertoriginal/tricklingup.pdf).
 
-The one downside to this replication technique is that the container is entirely opaque: you cannot see what I am doing to replicate the paper. You can look inside the container by instead using Docker desktop, following the steps below.
+The downside to this replication technique is that the container is entirely opaque: you cannot see what I am doing to replicate the paper. You can look inside the container by instead using Docker desktop, following the steps below.
 
 ## Replication using Docker desktop
-1. Open Docker desktop. Search for trickling-up-docker in the search bar at the top (which you can also open with command-K). Search in the "images" tab.
+1. Open Docker desktop. Search for "trickling-up-docker" in the search bar at the top (which you can also open with command-K). Search in the "images" tab.
 2. Select the `martinbernstein/trickling-up-docker` image. Click `Run`. Under optional settings, you can optionally name the container and assign a local host; click `Run` again when done.
 3. The container will begin to run. The `Logs` tab will open by default. It may show errors; this does not mean that the container is not running successfully. Navigate instead to the `Files` tab.
 4. Open the `app` directory in the `Files` tab. Here, you can view the code contained in the Docker container (i.e., the `.jl` files in this directory). You can verify that they are the same as the code in this repository.
-5. Once the container has run, replicated tables and figures will be in the `/app/output` directory. You can verify that the "Last modified" will be the time at which you ran the container. To view these files, control-click on them and select `save`. You can then save the replication output and verify that it matches the manuscript (which is in `auclertoriginal/tricklingup.pdf`).
+5. Once the container has run, replicated tables and figures will be in the `/app/output` directory. You can verify that the "Last modified" will be the time at which you ran the container. To view these files, control-click on them and select `save`. You can then save the replication output and verify that it matches the [manuscript])auclertoriginal/tricklingup.pdf).
 
 # Replication output and explanation
 The replication instructions above describe how to view replication output. Here I'll include the output of the latest replication run in this repo for convenience.
